@@ -1,28 +1,35 @@
-import { StyleSheet, Pressable, Text } from "react-native"
+import { StyleSheet, Pressable, Text, StyleProp, ViewStyle, TextStyle } from "react-native"
 import { FunctionComponent as FC } from "react"
 
 interface IButton {
+    buttonStyle?: StyleProp<ViewStyle>
+    textStyle?: StyleProp<TextStyle>
     text: string,
     onPress: () => void
 }
 
-export const Button:FC<IButton> = ({text, onPress}) => {
+export const Button:FC<IButton> = ({text, onPress, buttonStyle, textStyle}) => {
     return (
-        <Pressable onPress={() => onPress()} style={style.block}>
-            <Text style={{textAlign: "center", fontSize: 32, width: "100%"}}>{text}</Text>
+        <Pressable onPress={() => onPress()} style={StyleSheet.compose(style.block, buttonStyle)}>
+            <Text style={StyleSheet.compose(style.text, textStyle)}>{text}</Text>
         </Pressable>
     )
 }
 
 const style = StyleSheet.create({
     block: {
-        backgroundColor: "#dadded",
+        backgroundColor: "#a881d4",
         width: "40%",
-        marginHorizontal: "30%",
-        paddingVertical: 15,
+        // marginHorizontal: "30%",
+        paddingVertical: 10,
         marginTop: 40,
-        borderRadius: 15,
-        height: 70,
+        borderRadius: 10,
+        height: 55,
         flexDirection: "row"
     },
+    text: {
+        textAlign: "center", 
+        fontSize: 28, 
+        width: "100%"
+    }
 })

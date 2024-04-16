@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Pressable} from "react-native";
 import { FunctionComponent as FC } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Button } from "./UI/button";
 
 interface ICourseBlock {
     title: string
@@ -11,10 +12,14 @@ const CourseBlock:FC<ICourseBlock> = ({title}) => {
 
     return (
         <View style={style.block}>
-            <Text style={style.text}>{title}</Text>
-            <Pressable style={style.button} onPress={() => navigation.navigate('MissedLatterTask')}>
-                <Text style={{fontSize: 16}}>GO</Text>
-            </Pressable>
+            <View style={{flexDirection: "row", height: "80%"}}>
+                <Text style={style.text1}>{title}</Text>
+                <Text style={style.text2}>Progress</Text>
+            </View>
+            <View style={{flexDirection: "row", height: "20%", width: "100%"}}>
+                <Button textStyle={{fontSize: 16}} buttonStyle={style.button} text="go" onPress={() => navigation.navigate('MissedLatterTask')}/>
+                <View style={{height: 15, width: "45%", marginLeft: 60, backgroundColor: "green", borderRadius: 10}}></View>
+            </View>
         </View>
     )
 }
@@ -28,25 +33,26 @@ const style = StyleSheet.create({
         paddingHorizontal: 10,
         marginVertical: 10,
         borderRadius: 15,
-        height: 70,
-        flexDirection: "row"
+        height: 120,
     },
-    text: {
+    text1: {
+        fontSize: 16,
+        width: "50%",
+        height: 40,
+        paddingVertical: 12 
+    },
+    text2: {
         fontSize: 16,
         width: "50%",
         height: 40,
         paddingVertical: 12 
     },
     button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: '#a8b3ed',
-        marginLeft: "30%",
-        width: 50,
-        height: 30,
-        marginVertical: 5
+        width: 100,
+        height: 40,
+        paddingVertical: 10,
+        marginTop: -15, 
+        marginLeft: 5
     }
 })
 

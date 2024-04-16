@@ -10,8 +10,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Курсы" component={CoursesStackNavigator}/>
-        <Tab.Screen name="Настройки" component={SettingsStackNavigator}/>
+        <Tab.Screen name="Courses" component={CoursesStackNavigator}/>
+        <Tab.Screen name="Settings" component={SettingsStackNavigator}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
