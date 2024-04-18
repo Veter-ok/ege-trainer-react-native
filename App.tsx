@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import CoursesStackNavigator from './routes/CoursesStackNavigator';
@@ -8,12 +8,12 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Courses" component={CoursesStackNavigator}/>
-        <Tab.Screen name="Settings" component={SettingsStackNavigator}/>
-      </Tab.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Courses" component={CoursesStackNavigator}/>
+          <Tab.Screen name="Settings" component={SettingsStackNavigator}/>
+        </Tab.Navigator>
+      </NavigationContainer>
   );
 }
 

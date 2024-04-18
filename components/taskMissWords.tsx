@@ -1,6 +1,7 @@
 import { SafeAreaView, View, Text } from "react-native"
 import { FunctionComponent as FC, useEffect, useState } from "react"
 import AnswerOptions from "./answerOption"
+import { basicTextStyle } from "../styles/textStyle"
 
 interface IMissedLetterProps {
     task: IMissedLatter
@@ -25,7 +26,7 @@ const MissedLatter:FC<IMissedLetterProps> = ({task}) => {
     return (
         <SafeAreaView>  
             <View style={{marginTop: 15}}>
-                <Text style={{textAlign: "center", fontSize: 30, marginVertical: 20}}>{task.title}</Text>
+                <Text style={[basicTextStyle, {fontSize: 30, marginVertical: 20}]}>{task.title}</Text>
                 <View style={{flexDirection: "row"}}>
                     <AnswerOptions id={task.id} isActive={isActiveOption} isCorrect={task.options[0] === task.answer} onClick={checkAnswer} title={task.options[0]}/>
                     <AnswerOptions id={task.id} isActive={isActiveOption} isCorrect={task.options[1] === task.answer} onClick={checkAnswer} title={task.options[1]}/>
