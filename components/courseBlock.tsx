@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, Pressable} from "react-native";
 import { FunctionComponent as FC } from "react";
-import { useNavigation } from "@react-navigation/native";
+import {router} from "expo-router"
 import { backgroundColor_2, backgroundColor_3 } from "../styles/colors";
 import { basicTextStyle } from "../styles/textStyle";
 
@@ -9,10 +9,9 @@ interface ICourseBlock {
 }
 
 const CourseBlock:FC<ICourseBlock> = ({title}) => {
-    const navigation = useNavigation()
 
     return (
-        <Pressable style={style.block} onPress={() => navigation.navigate('MissedLatterTask')}>
+        <Pressable style={style.block} onPress={() => router.push('rus/task9')}>
             <View style={{width: "30%",justifyContent: "center"}}>
                 <View style={{width: 55, height: 55, backgroundColor: "green", borderRadius: 100, marginLeft: "auto", marginRight: "auto"}}></View>
             </View>

@@ -1,12 +1,14 @@
 import { SafeAreaView, Text, View } from "react-native"
-import { getRandomNumber } from "../utils/random"
-import { tasks_9 } from "../data/task9"
+import { getRandomNumber } from "../../../utils/random"
+import { tasks_9 } from "../../../data/task9"
 import {useState } from "react"
-import MissedLatter from "../components/taskMissWords"
-import { Button } from "../components/UI/button"
-import { CheckBox } from "../components/UI/checkBox"
-import { isTaskInArray } from "../utils/taskUtils"
-import { basicTextStyle} from "../styles/textStyle"
+import MissedLatter from "../../../components/taskMissWords"
+import { Button } from "../../../components/UI/button"
+import { CheckBox } from "../../../components/UI/checkBox"
+import { isTaskInArray } from "../../../utils/taskUtils"
+import { basicTextStyle} from "../../../styles/textStyle"
+import Header from "../../../components/UI/header"
+import { backgroundColor_1 } from "../../../styles/colors"
 
 const MissedLatterTaskPage = () => {
     const [tasks, setTasks] = useState<IMissedLatter[]>([])
@@ -40,15 +42,17 @@ const MissedLatterTaskPage = () => {
     }
 
     return (
-        <SafeAreaView style={{height: "100%", backgroundColor: "#19173D"}}>
+        <View style={{height: "100%", backgroundColor: backgroundColor_1}}>
+            <Header title="Задание 9" back={true}/>
+            <SafeAreaView>
             {isTaskStart ? 
-                <View style={{justifyContent: "center"}}>
+                <View style={{justifyContent: "center", paddingTop: 100}}>
                     <Text style={[basicTextStyle, {fontSize: 22, marginTop: 20}]}>{indexOfTask+1}/{tasks.length}</Text>
                     <MissedLatter task={tasks[indexOfTask]}/>
                     <Button text="Дальше" onPress={getNextTask} buttonStyle={{marginLeft: "auto", marginRight: "auto"}}/>
                 </View>
                 :
-                <View style={{height: "100%", alignItems: 'center', paddingTop: 120}}>
+                <View style={{height: "100%", alignItems: 'center', paddingTop: 100}}>
                     <View style={{marginTop: 30}}>
                         <Text style={[basicTextStyle, {fontSize: 18}]}>Количество слов</Text>
                         <View style={{flexDirection: "row", marginLeft: "auto", marginRight: "auto", marginTop: 10}}>
@@ -64,11 +68,11 @@ const MissedLatterTaskPage = () => {
                             <CheckBox text="Повторение + новые слова" value={2} currentlyValue={traningType} onPress={setTraningType} buttonStyle={{width: 157}} textStyle={{fontSize: 16, fontWeight: "700"}}/>
                         </View>
                     </View>
-                    <Button text="Начать" onPress={startTask} buttonStyle={{position: "absolute", bottom: 10}}/>
+                    <Button text="Начать" onPress={startTask} buttonStyle={{position: "absolute", bottom: 140}}/>
                 </View>
-
             }
-        </SafeAreaView>
+            </SafeAreaView>
+        </View>
     )
 }
 

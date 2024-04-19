@@ -1,15 +1,15 @@
-import { StyleSheet, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import CoursesStackNavigator from './routes/CoursesStackNavigator';
 import SettingsStackNavigator from './routes/SettingsStackNavigation';
+import { backgroundColor_2 } from './styles/colors';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
   return (
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{tabBarColor: backgroundColor_2}}>
           <Tab.Screen name="Courses" component={CoursesStackNavigator}/>
           <Tab.Screen name="Settings" component={SettingsStackNavigator}/>
         </Tab.Navigator>
@@ -17,11 +17,8 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const RootNavigation = () => {
+//   return (
+
+//   )
+// }
