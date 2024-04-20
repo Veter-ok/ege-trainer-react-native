@@ -25,7 +25,7 @@ const AnswerOptions:FC<IAnswerOptionsProps> = ({id, isActive, isCorrect, title, 
 
     return (
         <Pressable onPress={() => onPress()} style={StyleSheet.compose(style.block, {backgroundColor: backgroundColor})}>
-            <Text style={{textAlign: "center", fontSize: 32, width: "100%"}}>{title}</Text>
+            <Text style={{textAlign: "center", fontSize: 32}}>{title}</Text>
         </Pressable>
     )
 }

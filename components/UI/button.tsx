@@ -13,7 +13,7 @@ interface IButton {
 export const Button:FC<IButton> = ({text, onPress, buttonStyle, textStyle}) => {
     return (
         <Pressable onPress={() => onPress()} style={[style.block1, buttonStyle]}>
-            <Text style={[basicTextStyle, {fontSize: 28, width: "100%"}, textStyle]}>{text}</Text>
+            <Text style={[basicTextStyle, {fontSize: 28}, textStyle]}>{text}</Text>
         </Pressable>
     )
 }
