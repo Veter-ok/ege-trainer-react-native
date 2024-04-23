@@ -2,14 +2,20 @@ import { StyleSheet, View, Text, Pressable} from "react-native";
 import * as Progress from 'react-native-progress';
 import { FunctionComponent as FC } from "react";
 import {router} from "expo-router"
-import { backgroundColor_2 } from "../styles/colors";
-import { basicTextStyle } from "../styles/textStyle";
+import { basicTextStyle, backgroundColor_2 } from "../styles/styles";
 import { ICourse } from "../types/courses";
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 interface ICourseBlock {
     course: ICourse
 }
+
+const Icons = [
+    <FontAwesome name="book" size={38} color="white" style={{marginLeft: "auto", marginRight: 20}}/>,
+    <MaterialCommunityIcons name="math-integral-box" size={42} color="white" style={{marginLeft: "auto", marginRight: 20}}/>,
+    <MaterialIcons name="computer" size={38} color="white" style={{marginLeft: "auto", marginRight: 20}}/>
+]
+
 
 const CourseBlock:FC<ICourseBlock> = ({course}) => {
 
@@ -24,7 +30,7 @@ const CourseBlock:FC<ICourseBlock> = ({course}) => {
                 <Text style={[basicTextStyle, style.text2]}>{course.description}</Text>
             </View>
             <View style={{width: "20%", justifyContent: "center"}}>
-                <FontAwesome name="book" size={38} color="white" style={{marginLeft: "auto", marginRight: 20}}/>
+                {Icons[course.subject]}
             </View>
         </Pressable>
     )
@@ -56,8 +62,6 @@ const style = StyleSheet.create({
     circle: {
         marginLeft: "auto", 
         marginRight: "auto", 
-        marginTop: "auto", 
-        marginBottom: "auto"
     }
 })
 

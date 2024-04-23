@@ -1,7 +1,6 @@
 import { StyleSheet, Pressable, Text, StyleProp, ViewStyle, TextStyle } from "react-native"
 import { FunctionComponent as FC } from "react"
-import { backgroundColor_3, textColor2 } from "../../styles/colors"
-import { basicTextStyle } from "../../styles/textStyle"
+import { backgroundColor_3, textColor2, basicTextStyle } from "../../styles/styles"
 
 interface IButton {
     buttonStyle?: StyleProp<ViewStyle>

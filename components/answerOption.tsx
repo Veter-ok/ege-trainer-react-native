@@ -1,5 +1,6 @@
 import { FunctionComponent as FC, useEffect, useState } from "react"
 import { Text, StyleSheet, Pressable} from "react-native"
+import { basicTextStyle } from "../styles/styles"
 
 interface IAnswerOptionsProps {
     id: number,
@@ -25,7 +26,7 @@ const AnswerOptions:FC<IAnswerOptionsProps> = ({id, isActive, isCorrect, title, 
 
     return (
         <Pressable onPress={() => onPress()} style={StyleSheet.compose(style.block, {backgroundColor: backgroundColor})}>
-            <Text style={{textAlign: "center", fontSize: 32}}>{title}</Text>
+            <Text style={[basicTextStyle, {marginTop: -3, fontSize: 36, color: "black"}]}>{title}</Text>
         </Pressable>
     )
 }

@@ -1,6 +1,6 @@
 import { StyleSheet, Pressable, Text, StyleProp, ViewStyle, TextStyle } from "react-native"
 import { FunctionComponent as FC } from "react"
-import { backgroundColor_2, backgroundColor_3 } from "../../styles/colors"
+import { backgroundColor_2, backgroundColor_3 } from "../../styles/styles"
 
 interface ICheckBoxProps {
     text: string,

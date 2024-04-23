@@ -1,14 +1,13 @@
 import { SafeAreaView, Text, View } from "react-native"
+import {useState } from "react"
 import { getRandomNumber } from "../../utils/random"
 import { tasks_9 } from "../../data/task9"
-import {useState } from "react"
 import MissedLatter from "../../components/taskMissWords"
 import { Button } from "../../components/UI/button"
-import { CheckBox } from "../../components/UI/checkBox"
 import { isTaskInArray } from "../../utils/taskUtils"
-import { basicTextStyle} from "../../styles/textStyle"
+import { basicTextStyle, backgroundColor_1} from "../../styles/styles"
 import Header from "../../components/UI/header"
-import { backgroundColor_1 } from "../../styles/colors"
+import TaskSetting from "../../components/taskSetting"
 
 const MissedLatterTaskPage = () => {
     const [tasks, setTasks] = useState<IMissedLatter[]>([])
@@ -52,24 +51,13 @@ const MissedLatterTaskPage = () => {
                     <Button text="Дальше" onPress={getNextTask} buttonStyle={{marginLeft: "auto", marginRight: "auto"}}/>
                 </View>
                 :
-                <View style={{height: "100%", alignItems: 'center', paddingTop: 100}}>
-                    <View style={{marginTop: 30}}>
-                        <Text style={[basicTextStyle, {fontSize: 18, marginLeft: "auto", marginRight: "auto"}]}>Количество слов</Text>
-                        <View style={{flexDirection: "row", marginLeft: "auto", marginRight: "auto", marginTop: 10}}>
-                            <CheckBox text="10" value={10} currentlyValue={numberofWords} onPress={SetNumberofWords}/>
-                            <CheckBox text="20" value={20} currentlyValue={numberofWords} onPress={SetNumberofWords}/>
-                            <CheckBox text="50" value={50} currentlyValue={numberofWords} onPress={SetNumberofWords}/>
-                        </View>
-                    </View>
-                    <View style={{marginTop: 35}}>
-                        <Text style={[basicTextStyle, {fontSize: 18, marginLeft: "auto", marginRight: "auto"}]}>Вид тренировки</Text>
-                        <View style={{flexDirection: "row", marginLeft: "auto", marginRight: "auto", marginTop: 10}}>  
-                            <CheckBox text="Новые слова" value={1} currentlyValue={traningType} onPress={setTraningType} buttonStyle={{width: 157}} textStyle={{fontSize: 16, fontWeight: "700"}}/>
-                            <CheckBox text="Повторение + новые слова" value={2} currentlyValue={traningType} onPress={setTraningType} buttonStyle={{width: 157}} textStyle={{fontSize: 16, fontWeight: "700"}}/>
-                        </View>
-                    </View>
-                    <Button text="Начать" onPress={startTask} buttonStyle={{position: "absolute", bottom: 180}}/>
-                </View>
+                <TaskSetting 
+                    numberofWords={numberofWords}
+                    SetNumberofWords={SetNumberofWords}
+                    traningType={traningType}
+                    setTraningType={setTraningType}
+                    startTask={startTask}
+                />
             }
             </SafeAreaView>
         </View>

@@ -3,7 +3,7 @@ import Header from '../../components/UI/header'
 import { CheckBox } from "../../components/UI/checkBox";
 import CourseBlock from "../../components/courseBlock";
 import { useEffect, useState } from "react";
-import { backgroundColor_1 } from "../../styles/colors";
+import { backgroundColor_1 } from "../../styles/styles";
 import { courses, subjects } from "../../data/courses";
 import { ICourse } from "../../types/courses";
 

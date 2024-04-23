@@ -1,7 +1,6 @@
 import { View, Text, Pressable} from "react-native"
 import { FunctionComponent as FC } from "react"
-import { basicTextStyle} from "../../styles/textStyle"
-import { backgroundColor_1} from "../../styles/colors"
+import { basicTextStyle, backgroundColor_1} from "../../styles/styles"
 import { MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons';
 import { router } from "expo-router"
 

@@ -1,3 +1,5 @@
+import { FontAwesome } from '@expo/vector-icons';
+
 export interface ISubject {
     id: number,
     title: string
@@ -8,6 +10,5 @@ export interface ICourse {
     subject: number
     title: string
     description: string
-    path: string,
-    icon?: string
+    path: string
 }

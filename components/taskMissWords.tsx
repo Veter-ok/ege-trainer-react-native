@@ -1,7 +1,7 @@
 import { SafeAreaView, View, Text } from "react-native"
 import { FunctionComponent as FC, useEffect, useState } from "react"
 import AnswerOptions from "./answerOption"
-import { basicTextStyle } from "../styles/textStyle"
+import { basicTextStyle } from "../styles/styles"
 
 interface IMissedLetterProps {
     task: IMissedLatter

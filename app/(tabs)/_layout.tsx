@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router"
 import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import React from "react";
-import { backgroundColor_2 } from "../../styles/colors";
+import { backgroundColor_2 } from "../../styles/styles";
 
 const TabsLayout = () => {
     return (
