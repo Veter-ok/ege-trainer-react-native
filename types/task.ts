@@ -4,3 +4,10 @@ interface IMissedLatter {
     answer: string
     options: string[]
 }
+
+interface IStressInWords {
+    id: number,
+    word: string
+    answer: string,
+    options: string[]
+}
